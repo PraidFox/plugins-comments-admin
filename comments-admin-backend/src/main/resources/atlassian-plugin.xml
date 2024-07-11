@@ -1,0 +1,33 @@
+<atlassian-plugin key="${atlassian.plugin.key}" name="${project.name}" plugins-version="2">
+    <plugin-info>
+        <description>${project.description}</description>
+        <version>${project.version}</version>
+        <vendor name="${project.organization.name}" url="${project.organization.url}" />
+        <param name="plugin-icon">images/pluginIcon.png</param>
+        <param name="plugin-logo">images/pluginLogo.png</param>
+    </plugin-info>
+
+    <resource type="i18n" name="i18n" location="commentsAdmin"/>
+
+    <rest name="comments-admin-module" key="comments-admin-module" path="/commentsAdmin" version="1">
+        <description>Comments admin REST</description>
+    </rest>
+
+    <ao key="ao-module">
+        <description>AO модуль</description>
+        <entity>ru.atlassian.commentsAdmin.ao.CommentsAdminAO</entity>
+    </ao>
+
+    <web-resource key="myPluginViewIssue" name="MyPlugin's JS">
+        <context>jira.view.issue</context>
+        <dependency>jira.webresources:viewissue</dependency>
+        <resource type="download" name="main-view.js" location="/js/main-view.js"/>
+    </web-resource>
+
+    <issue-tabpanel key="comments-admin-issue-tabpanel" name="Comments Admin Tab Panel" class="ru.atlassian.commentsAdmin.container.IssueTabCustomCommentsAdmin">
+        <description>Show a custom panel.</description>
+        <label>Technical comments</label>
+        <supports-ajax-load>true</supports-ajax-load>
+    </issue-tabpanel>
+
+</atlassian-plugin>
