@@ -16,9 +16,7 @@ import java.util.List;
 
 
 @Path("/comments")
-public class CommentsAdminApi {
-
-    public final CommentsAdminService commentsAdminService;
+public class CommentsAdminApi {    public final CommentsAdminService commentsAdminService;
     @ComponentImport
     private final JiraAuthenticationContext jiraAuthenticationContext;
 
