@@ -17,6 +17,7 @@ function App({comments}: { comments: CommentsAdminDto[] }) {
             />
         )
 
+
         if (comments.length === 0) {
             reactContent = [<CommentAtlas
                 avatarUrl={"http://localhost:8080/secure/useravatar?avatarId=10350&s=48"}
