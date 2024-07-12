@@ -38,7 +38,7 @@ public class CommentsAdminService implements ICommentsAdminService {
         List<CommentsDto> commentsDto = Arrays.stream(activeObjects.find(CommentsAdminAO.class, "issue_id = ?", issueId)).map(CommentsDto::new).collect(Collectors.toList());
 
         commentsDto.forEach(comment -> {
-                    ApplicationUser user = userManager.getUserByName("John");
+                    ApplicationUser user = userManager.getUserByName(comment.getAuthor());
                     comment.setAvatarUrl(avatarService.getAvatarAbsoluteURL(user, user, Avatar.Size.biggerThan(32)).toString());
                 }
         );

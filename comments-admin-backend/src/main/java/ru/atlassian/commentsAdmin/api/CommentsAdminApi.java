@@ -3,7 +3,6 @@ package ru.atlassian.commentsAdmin.api;
 import com.atlassian.jira.security.JiraAuthenticationContext;
 import com.atlassian.plugin.spring.scanner.annotation.imports.ComponentImport;
 import com.google.gson.Gson;
-import ru.atlassian.commentsAdmin.ao.CommentsAdminAO;
 import ru.atlassian.commentsAdmin.models.CommentsDto;
 import ru.atlassian.commentsAdmin.models.CommentsPostDto;
 import ru.atlassian.commentsAdmin.services.CommentsAdminService;
@@ -14,9 +13,9 @@ import javax.ws.rs.core.Response;
 import java.util.List;
 
 
-
 @Path("/comments")
-public class CommentsAdminApi {    public final CommentsAdminService commentsAdminService;
+public class CommentsAdminApi {
+    public final CommentsAdminService commentsAdminService;
     @ComponentImport
     private final JiraAuthenticationContext jiraAuthenticationContext;
 
